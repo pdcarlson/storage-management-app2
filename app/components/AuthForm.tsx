@@ -25,6 +25,7 @@ const formSchema = z.object({
 
 import React from 'react'
 import Link from "next/link"
+import OtpModal from "./OTPModal"
 
 type FormType = 'sign-in' | 'sign-up';
 
@@ -128,6 +129,7 @@ const AuthForm = ( {type}: {type: FormType}) => {
       </form>
     </Form>
     {/* OTP VERIFICATION */}
+    {true && <OtpModal email={form.getValues('email')} accountId={accountId} />}
     </>
   )
 }
